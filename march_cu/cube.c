@@ -96,10 +96,14 @@ void printDecisionNode (struct Dnode Dnode, int depth, int discrepancies, int ta
   if (Dnode.type != INTERNAL_DNODE) {
     if ((target == -1) || (discrepancies == target)) {
       _nr_cubes++;
-      fprintf (cubes, "a ");
+      // print cubes instead of file output
+      //fprintf (cubes, "a ");
+      printf ("a ");
       int i; for (i = 0; i < depth; i++)
-	fprintf (cubes, "%d ", cubeTrail[ i ] );
-      fprintf (cubes, "0\n" ); }
+        printf ("%d ", cubeTrail[i]);
+        //fprintf (cubes, "%d ", cubeTrail[ i ] );        
+      //fprintf (cubes, "0\n" );
+      printf ("0\n"); }
     return; }
 
 #ifndef FLIP_ASSUMPTIONS
